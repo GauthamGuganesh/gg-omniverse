@@ -1,8 +1,7 @@
 package sample;
 
+
 import sample.Bank.Bank;
-import sample.Bank.Branch;
-import sample.LinkedList.Album;
 
 public class BankApplication 
 {
