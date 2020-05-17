@@ -2,9 +2,10 @@ package SoftLeak;
 
 public class CustomerHarness {
 	
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws Exception {
 		CustomerManager cm = new CustomerManager();
 		GenerateCustomerTask task = new GenerateCustomerTask(cm);
+		
 		for (int user = 0; user < 10; user++) {
 			Thread t = new Thread(task);
 			t.start();
@@ -25,3 +26,5 @@ public class CustomerHarness {
 	}
 
 }
+
+

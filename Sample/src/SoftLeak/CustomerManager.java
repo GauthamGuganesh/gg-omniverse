@@ -21,9 +21,18 @@ public class CustomerManager {
 	}
 	
 	public Customer getNextCustomer() {
-		//should do:
-		//customers.remove(0);
-		return customers.get(0);
+		//should do: //If no remove method, can still be refernced from the stack through the "customers" list. OutOfmemory.
+		//If used remove, removed from list, hence unreferencable from stack and marked for garbage collection.
+		Customer result = null;
+		synchronized(this)
+		{
+			if(customers.size() > 0)
+			{
+				result = customers.remove(0);
+			}
+		}
+		
+		return result;
 	}
 
 	public void howManyCustomers() {

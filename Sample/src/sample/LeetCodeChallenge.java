@@ -10,6 +10,7 @@ import java.util.Map;
 
 import sample.ListNode;
 import sample.TreeNode;
+import sample.LeetCode.LRUCacheImp.LRUCache;
 
 //Happy number
 //Single number
@@ -30,6 +31,7 @@ import sample.TreeNode;
 //Construct Binary Search Tree from Preorder Traversal
 //Number of continous sub-arrays with sum = k.
 //Bitwise AND of Numbers Range
+//LRU Cache
 
 //**Dynamic Programming**
 //Valid Parenthesis String
@@ -94,7 +96,28 @@ public class LeetCodeChallenge
 		
 //		test();
 		
-		System.out.println(rangeBitwiseAnd(2, 6));
+//		System.out.println(rangeBitwiseAnd(2, 6));
+		
+		LRUCache cache = new LRUCache(2);
+		
+		cache.put(2, 1);
+		cache.printCache();
+		
+		cache.put(1, 1);		
+		cache.printCache();
+		
+		cache.put(2, 3);
+		cache.printCache();
+
+		cache.put(4, 1);
+		
+		cache.printCache();
+		
+		System.out.println("Retreiving key :: 1 : " + cache.get(1));      
+		
+		System.out.println("Retreiving key :: 2 : " + cache.get(2));       
+		
+		cache.printCache();
 	}
 	
 	public static int rangeBitwiseAnd(int m, int n) 
