@@ -1,0 +1,186 @@
+body{
+	background: hsl(47, 71%, 86%);
+}
+
+#header
+{	
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: space-around;
+	background-color: hsl(47, 71%, 62%);
+	margin-top: -10px;
+	margin-left: -10px;
+	width: 100%;
+	position: fixed;
+}
+
+#header-img
+{
+	margin-top: auto;
+	justify-self: start;
+	
+	width: 40%;
+	height: 50%;
+	display: flex;
+}
+
+img{
+	width: 90px;
+	height: auto;
+	border-radius: 1%;
+	border-style: solid;
+	border-width: thin;
+}
+
+figure-caption{
+	margin: auto;
+	font-size: 28px;
+	font-family: custom-internet-font;
+}
+
+
+@font-face{
+	font-family: custom-internet-font;
+	src: url("Parisienne-Regular.ttf");
+}
+
+#nav-bar
+{
+	display: flex;
+	justify-content: space-evenly;
+	font-family: Lato;
+	font-size: 16px;
+	align-self: center;
+}
+
+a{
+	text-decoration: none;
+	color: hsl(47, 71%, 26%);
+}
+
+#form
+{
+	text-align: center;	
+	height: auto;
+	padding-top: 8%;
+}
+
+#email
+{
+	border-style: solid;
+	display: block;
+	margin: auto;
+	width: 30%;
+	height: 5%;
+}
+
+p{
+	display:block;
+	display: hidden;	
+}
+
+#submit
+{
+	margin-top: auto;
+	background-color: hsl(227, 72%, 82%);
+	width: 13%;
+	height: 4%;
+	text-transform: uppercase;
+	word-spacing: 3px;
+	font-size: 18px;
+	font-family: Lato;
+	font-weight: bold;
+	color:#1c2833;
+	border-style: none;
+}
+
+#features{
+	margin-top: 7vw;
+}
+
+#featureList{
+	list-style-type: none;
+	font-size: 16px;
+	padding-left: 20%;
+}
+
+li{
+	height: 15%;	
+}
+
+h2{
+	margin-bottom: -2px;
+}
+
+span{
+	font-size: 17px;
+}
+
+#HowItWorks{
+	margin-top: 5%;
+	margin-left: 30%;
+	margin-bottom: 5%;
+}
+
+#price{
+	width: 70%;
+	height: 40%;
+	margin-left: 15%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 16px;
+	text-align: center;
+}
+
+.price-detail
+{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 1%;
+}
+
+.price-detail h3{
+		background-color: hsl(47, 71%, 70%);	
+		margin-top: 0;
+		height: 2.5em;
+		padding-top: 1em;
+		text-align:center;
+}
+
+#price .price-detail p{
+	font-size: 1.5em;
+}
+
+#select{
+	margin-top: auto;
+	background-color:  hsl(227, 72%, 82%);
+	width: 23%;
+	height: 10%;
+	text-transform: uppercase;
+	word-spacing: 3px;
+	font-size: 14px;
+	font-family: Lato;
+	font-weight: bold;
+	color:#1c2833;
+	border-style: none;
+	
+}
+
+@media (max-width:600px)
+{
+	#price
+	{
+		display: block;		
+	}
+	
+	.price-detail h3
+	{
+		font-size: 15px;
+	}
+}
+
+
+
+
+
+

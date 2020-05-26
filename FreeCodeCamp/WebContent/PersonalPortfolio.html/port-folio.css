@@ -1,0 +1,189 @@
+html, body{
+	margin: 0;
+}
+
+#navbar{
+	position: fixed;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: stretch;	
+
+	width: 100%;
+	height: 10%;
+	min-height: 60px;	
+	background-color: #be3144;
+	
+}
+
+#navbar a{
+	text-decoration: none;
+	color: #ffffee;	
+	font-size: 20px;
+	font-family: Lato;
+	margin-right: 0.1em;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#navbar a:hover{
+	background-color: #45567D;
+}
+
+#navbar .last-link{
+	border-style: none;
+}
+
+@font-face{
+	font-family: Raleway;
+	src: url("Raleway/Raleway-SemiBold.ttf");
+}
+
+@font-face{
+	font-family: Raleway-thin;
+	src: url("Raleway/Raleway-ThinItalic.ttf");
+}
+
+@font-face{
+	font-family: Raleway-regular;
+	src:  url("Raleway/Raleway-Regular.ttf");
+}
+
+#welcome-section{	
+	background-color: hsl(0, 0%, 20%);
+	color: #FFFFFF;
+	
+	height: 100%;
+	
+	display: grid;
+	grid-template-rows: auto;
+	
+	color: #ffffff;
+}
+
+#welcome-section h1{
+	color: #ffffff;
+	font-size: 50px;
+	font-family: Raleway;
+	
+	min-width: 100%;
+	align-self: center;
+	justify-self: center;
+	
+	text-align: center;
+}
+
+#welcome-section p{
+	
+	font-family: Raleway-thin;
+	font-size: 30px;
+	color: #be3144;
+	
+	text-align: center;
+	
+	position: relative;
+	bottom: 25x;	                  
+}
+
+#projects{
+	height: 175%;
+	background: #45567D;
+	
+	color: #ffffff;
+		
+}
+
+#projects h1{
+	
+	margin: 0;
+	height: 20%;	
+	
+	font-size: 50px;
+	font-family: Raleway;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: underline;
+}
+
+.project-tile{
+	
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	
+	text-decoration: none;
+	color: hsl(222, 29%, 48%);
+	
+	font-family: Raleway-regular;
+	font-size: 20px;
+	
+	margin-left: 50px;
+	margin-top: 50px;
+}
+
+.project-tile img{
+	
+	width: 100%;
+	height: 80%;
+}
+
+.project-tile p{
+	margin: 0;
+	height: 3em;
+	color: #ffffff;
+	background-color: hsl(0, 0%, 20%);
+	text-align: center;
+	
+	display: flex;
+	
+	align-items: center;
+	justify-content: center;
+}
+
+#contact{
+	border: hsl(0, 0%, 20%);
+	background-color: hsl(0, 0%, 20%);
+	
+	height: 100%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#contact h1{
+	color: #ffffff;
+	font-family: Raleway;
+	font-size: 50px;
+}
+
+#contact a{
+	color: #ffffff;
+	display: inline-block;
+	font-size: 25px;
+	font-family: Raleway-regular;
+	
+	height: 2em;
+	
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+@media (max-width: 600px)
+{
+	#projects{
+	display: hidden;
+	}
+}
+
+
+
+
+
+
+
+

@@ -19,7 +19,30 @@ public class MenuDao {
 
 	public MenuDao() {
 //		DatabaseBootstrap bootstrap = new DatabaseBootstrap();
-//		bootstrap.initializeDatabase(); To prevent initializing every time we run the application, these two lines are commented.
+//		bootstrap.initializeDatabase();
+	}
+	
+	public List<Order> getAllOrders() {
+		List<Order> orders = new ArrayList<Order>();
+		try (Connection conn = DriverManager.getConnection("jdbc:h2:~/restaurant","","");
+			 Statement stm = conn.createStatement();
+			 ) {	
+			
+			ResultSet results = stm.executeQuery("SELECT * FROM orders");
+			
+			while (results.next()) {
+				Order order = new Order();
+				order.setId(results.getLong("id"));
+				order.setStatus(results.getString("status"));
+				Map<MenuItem,Integer> orderMap = convertContentsToOrderMap(results.getString("contents"));
+				order.setContents(orderMap);
+				order.setCustomer(results.getString("customer"));
+				orders.add(order);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e); 
+		}
+		return orders;
 	}
 
 	private List<MenuItem> buildMenu(ResultSet results) throws SQLException {
@@ -156,6 +179,20 @@ public class MenuDao {
 		}
 
 	}
+	
+	public void updateOrderStatus(Long id, String status) {
+		try (	Connection conn = DriverManager.getConnection("jdbc:h2:~/restaurant","","");
+				Statement stm = conn.createStatement();
+				PreparedStatement stmUpdate = conn.prepareStatement("UPDATE orders SET status = ? WHERE id = ?");
+				) {	
+			stmUpdate.setString(1, status);
+			stmUpdate.setLong(2, id);
+			stmUpdate.execute();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	public Double getOrderTotal(Long id) {
 		double d = 0d;
@@ -173,5 +210,24 @@ public class MenuDao {
 		}
 
 		return d;
+	}
+	
+	public Order getOrder(Long id) {
+		try (	Connection conn = DriverManager.getConnection("jdbc:h2:~/restaurant","","");
+				Statement stm = conn.createStatement();
+				ResultSet res = stm.executeQuery("SELECT * FROM orders WHERE id = " + id);
+				) {
+			res.next();
+			Map<MenuItem,Integer> orderMap = convertContentsToOrderMap(res.getString("contents"));
+			Order order = new Order();
+			order.setCustomer(res.getString("customer"));
+			order.setId(res.getLong("id"));
+			order.setStatus(res.getString("status"));
+			order.setContents(orderMap);
+			return order;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
 	}
 }
