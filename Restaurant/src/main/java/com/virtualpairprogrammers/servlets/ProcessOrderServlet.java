@@ -1,11 +1,8 @@
 package com.virtualpairprogrammers.servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -18,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.virtualpairprogrammers.data.MenuDao;
 import com.virtualpairprogrammers.data.MenuDaoFactory;
 import com.virtualpairprogrammers.domain.Order;
+import com.virtualpairprogrammers.websockets.KitchenDisplaySessionHandler;
+import com.virtualpairprogrammers.websockets.KitchenDisplaySessionHandlerFactory;
 
 @WebServlet("/processorder.html")
 public class ProcessOrderServlet extends HttpServlet{
@@ -47,6 +46,10 @@ public class ProcessOrderServlet extends HttpServlet{
 		String status =  request.getParameter("status");
 		System.out.println(id + " : " + status);
 		menuDao.updateOrderStatus(id,status);
+		
+		KitchenDisplaySessionHandler kitchenDisplaySessionHandler = KitchenDisplaySessionHandlerFactory.getKitchenDisplaySessionHandler();
+		kitchenDisplaySessionHandler.updateOrder(menuDao.getOrder(id));
+		
 		doGet(request,response);
-		}
+	}
 }

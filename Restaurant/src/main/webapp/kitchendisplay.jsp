@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<script>
-		
+		<script>  // Long polling demonstration.
+		 
             var connectionOpen = false; //Global variables
             var nextOrder = 1; //Increment afer every response to start polling for next response. Fetches already present orders quickly
             																					// and waits for new one.

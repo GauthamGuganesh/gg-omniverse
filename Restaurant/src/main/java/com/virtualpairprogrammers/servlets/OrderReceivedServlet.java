@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import com.virtualpairprogrammers.data.MenuDaoFactory;
 import com.virtualpairprogrammers.data.MenuDao;
 import com.virtualpairprogrammers.domain.Order;
+import com.virtualpairprogrammers.websockets.KitchenDisplaySessionHandler;
+import com.virtualpairprogrammers.websockets.KitchenDisplaySessionHandlerFactory;
 
 @WebServlet("/orderReceived.html")
 public class OrderReceivedServlet extends HttpServlet {
@@ -37,6 +39,9 @@ public class OrderReceivedServlet extends HttpServlet {
 			  }  
 			  
 		}
+		
+		KitchenDisplaySessionHandler handler = KitchenDisplaySessionHandlerFactory.getKitchenDisplaySessionHandler();
+		handler.newOrder(order); //Integrating web sockets into our application. 
 		
 		System.out.println("A new order has been received.");
 		
