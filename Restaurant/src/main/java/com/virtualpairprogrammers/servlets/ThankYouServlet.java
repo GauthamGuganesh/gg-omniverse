@@ -24,19 +24,20 @@ public class ThankYouServlet extends HttpServlet {
 	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException 
 	{			
 		HttpSession session = request.getSession();
-		Long id = (Long) session.getAttribute("orderId");
+		Long orderId = (Long) session.getAttribute("orderId");
 		
 		MenuDao menuDao = MenuDaoFactory.getMenuDao();
 		
-		Double total = menuDao.getOrderTotal(id);
-		String status = menuDao.getOrder(id).getStatus();
+		Double total = menuDao.getOrderTotal(orderId);
+		String status = menuDao.getOrder(orderId).getStatus();
 		
-		if (id == null) {
+		if (orderId == null) {
 			response.sendRedirect("/order.html");
 			return;
 		}
 		
 		request.setAttribute("status", status);
+		request.setAttribute("id", orderId);
 		request.setAttribute("total", total);
 		
 		ServletContext context = getServletContext();
