@@ -1,0 +1,36 @@
+.preStyles{
+	height: 100%;
+}
+
+html, body{
+	@extend .preStyles;
+}
+
+#main{	
+	@extend .preStyles;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#editor-container{
+	height: 30%;		
+}
+
+#editor-row{
+	@extend .preStyles;
+}
+
+#previewer-container{
+	margin-bottom: 10px;
+}
+
+#previewer-row{
+	@extend .preStyles;
+}
+
+#preview{
+	height: 100%;
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+}

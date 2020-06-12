@@ -13,7 +13,7 @@
 		{
 		    var request = new XMLHttpRequest();
 		    // client CALLBACK checking for successful response from server
-		    request.onreadystatechange = function() {  // Don't use arrow functions in AJAX
+		    request.onreadystatechange = function() {  // This is an event handler. Event: onreadystatechange.
 		        if(this.readyState == 4)
 		        {
 		        	let resp = JSON.parse(this.responseText);
