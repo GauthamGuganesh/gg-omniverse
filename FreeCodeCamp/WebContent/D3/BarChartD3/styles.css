@@ -1,0 +1,24 @@
+.bar{
+	width: 3px;
+	fill: blue;
+	border-style: solid;
+	border-width: thin;
+
+}
+
+.bar:hover{
+	fill: white;
+}
+
+#tooltip{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 12px;
+
+	height: 50px;
+	width: 50px;
+}
