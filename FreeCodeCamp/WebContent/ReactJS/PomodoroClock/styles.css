@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+html, body{
+	height: 100%;
+}
+
+#main{
+	height: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #1E555C;
+}
+
+#clock-container{
+	height: 500px;
+	width: 500px;
+	font-family: Righteous;
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#clock-container h1{
+	font-weight: 400;
+	text-align: center;
+}
+
+#control-holder1{
+	position: relative;
+	top: 30px;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+#break-holder, #session-holder{
+	font-size: 25px;
+}
+
+#row-container1, #row-container2{
+	display: flex;
+	justify-content: center;
+}
+
+#timer-holder{
+	align-self: center;
+
+	border-style: solid;
+	border-radius: 15%;
+	border-width: 7px;
+	border-color: hsl(187, 51%, 15%);
+
+	width: 50%;
+	margin-top: 60px;
+}
+
+#timer-label{
+	text-align: center;
+	padding-top: 20px;
+}
+
+#time-left{
+	font-family: Orbitron;
+	font-size: 50px;
+}
+
+#control-holder2{
+	font-size: 20px;
+	margin-top: 20px;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+.pointer:hover{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
