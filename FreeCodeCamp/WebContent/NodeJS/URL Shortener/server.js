@@ -55,7 +55,7 @@ let findDoc = async (searchObj) =>
   }); 
   
   return value;
-}
+};
 
 // your first API endpoint... 
 app.post("/api/shorturl/new", function (req, res) 
