@@ -1,0 +1,31 @@
+WHY BUILDER PATTERN ?
+
+Builder = A separate component that is used only for building complex objects.
+
+* Simpler objects like x,y coordinates, directly create simple objects. 
+
+Eg: Coordinates xy = new Coordinates(x,y);
+
+* Some objects are really COMPLEX, require quite a ceremony to create. 
+Having an object constructor with 10 parameters is not productive. (“The Telescopic Constructors”)
+Will lead to errors.
+
+* Instead contruct complex complex objects piece-by-piece. Provide a easy-to-use API to make this construction easier.
+
+Eg: //Suppose you are serving a webpage, you need to output HTML to the browser. Refer code Demo.java
+   
+ 
+* Now let's build our own builder for the above example. >>Demo.java
+
+*Fluent Builder => Able to chain methods to build elements fluently. >>Demo.java
+
+*When chaining methods with fluent builders, there is a complication. If the builders are 
+inherited, there is a problem while chaining.eg: withName("gg").worksAt("sofware")  will throw error.
+Because withName returns parent class, but workAt method is present in derived class.
+
+Solved by recursive generics. >>FluentBuilder.java
+
+* Some times objects might be too complex that you might need several builders. This is called "faceted builder".
+Several facets of an object built by different builders. 
+Have them inherit a base class so that they are fluent (ie) can switch from one builder to another easily through base class.
+>>FacetedBuilder.java

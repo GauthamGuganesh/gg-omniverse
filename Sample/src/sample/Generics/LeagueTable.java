@@ -3,6 +3,7 @@ package sample.Generics;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//A generic league table. Can be used for cricket teams, volleyball teams etc.
 public class LeagueTable<T extends Team & Comparable<T>> 
 {
 	ArrayList<T> leagueTable;

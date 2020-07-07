@@ -4,7 +4,7 @@ public class GenericsMain
 {
 	public static void main(String[] args) 
 	{
-		LeagueTable<CricketTeam> leagueTable = new LeagueTable<>();
+		LeagueTable<CricketTeam> leagueTable = new LeagueTable<>(); //League of cricket teams.
 		
 		CricketTeam team1 = new CricketTeam(5, "Pakistan");
 		CricketTeam team2 = new CricketTeam(4, "England");

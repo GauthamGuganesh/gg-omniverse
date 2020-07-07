@@ -52,7 +52,7 @@ let buildchloropleth = () =>
               .range(["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]);
                                                                                                                                       
     //topo = result from 1st API call                                                                                                                                     
-		svg.append('g')
+		svg.append('g') // <path d=''> 'Path' with 'd' attribute - The central feature of D3 chloropleth.
        .selectAll('path')
 		   .data(topojson.feature(topo, topo.objects.counties).features) //converting counties in topojson file into geojson and then taking it's 'features' to map data.
 		   .enter()
