@@ -1,4 +1,4 @@
-package com.activemesa.solid.srp;
+package SRP;
 
 import java.io.*;
 import java.net.URL;

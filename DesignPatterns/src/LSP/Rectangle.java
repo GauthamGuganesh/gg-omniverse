@@ -1,4 +1,4 @@
-package com.activemesa.solid.lsp;
+package LSP;
 
 class Rectangle
 {

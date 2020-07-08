@@ -1,4 +1,4 @@
-package com.activemesa.solid.ocp;
+package OCP;
 
 import java.util.ArrayList;
 import java.util.List;
