@@ -1,0 +1,15 @@
+WHY FACTORY ?
+
+  When object creation logic becomes complex(many constructors with different set of arguments- OVERLOADING HELL)
+  or there are lot of classes whose objects are to be created and the logic is turning convoluted.
+  
+  Contructors are not so descriptive. Are limited by their name having to be the classname. 
+  Factory methods can be more descriptive. (MAIN reason for factory design pattern)
+  
+  Overloading just on names of contructors not possible.
+  
+  IMP : Only for WHOLE-SALE creation of objects. Not piece-wise like with builders.
+  
+  * Have a descriptive factory method inside the object for creation.
+  * Make the constructor PRIVATE forcing the user to use the factory method.
+  * Hierarchy of objects can have a corresponding hierarchy of factories. >>AbstractFactory

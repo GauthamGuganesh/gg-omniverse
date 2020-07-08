@@ -57,7 +57,7 @@ class CitizenBuilder
 class Addressbuilder extends CitizenBuilder //Only if extended, possible to jump between builders fluently
 {
 	public Addressbuilder(Citizen citizen) {
-		this.citizen = citizen; 
+		this.citizen = citizen;
 	}
 
 	public Addressbuilder in(String streetName)
