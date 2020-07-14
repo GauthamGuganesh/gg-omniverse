@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CloningUtils"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/commons-lang3-3.10.jar"/>
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/javassist-3.12.1.GA.jar"/>
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/guava-23.0.jar"/>
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/reflections-0.9.11.jar"/>

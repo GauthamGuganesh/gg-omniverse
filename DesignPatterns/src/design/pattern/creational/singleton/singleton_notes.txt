@@ -1,0 +1,60 @@
+WHY?
+   When you need only one copy of an object throughout an application for like
+     * A Database repository
+     * Thread Safety
+     * Object Factory
+     * Take care of lazy instantiation
+     
+  Singleton can be broken by 
+     * Reflections - Enums not affected by reflection
+     * Serialization - solved by readResolve() { return instance } ;
+     * Thread Safety - Synchronize or double-check lock implement.
+     
+  *Pre-processing:
+  
+  	 Static blocks executed when class is loaded. >> Class loader in firefox bookmarks.
+     Only one execution of static block is done in lifetime of the application.
+      Hence static blocks can be used to handle situations even before construction of the objects.
+  
+  * Lazy implementation - don't want static blocks. Need for creating object only when needed.
+  
+  * Inner-static singleton Inner-static classes initializing. >> LazySingleton.java
+  
+  * ENUM-Based singleton.
+  
+   Enums are implicitly implementing serializable. But only the NAME of the instance is serialized.
+   Enum instance are automatically public,static,final
+   Enums implicitly extend java.lang.Enum class. So they cannot be inherited by other classes.
+   Enums can implement many interfaces.
+   ordinal() method, each enum constant index can be found, just like array index.
+   Enums can have constructors.
+  
+  * Monostate singleton 
+      Just make members variables of a class as static. No matter how many instances created, only one copy
+      of variables created and shared. DANGEROUS. Not recommmended. Doesn't communicate if it's singleton.
+      
+   
+  * Multiton - A glorified key-value store with lazy-loading.
+               Create fixed finite number of instances. 
+  
+When using an iterator, only one remove() should correspond to only one next().
+                        remove() should be preceeded by a next() or remove() should never precede it's next().
+  
+  * Testability issues in Singleton - To test singleton we need to be aware of the live value being held
+   									  since we can't create new objects for testing purposes.
+   									  
+   									  So singleton is accessed via an interface by depending objects.
+   									  
+   									  For test-cases we can implement this same interface and mimic an
+   									  object like singleton and inject this dependency to the singleton's dependents.
+   									  
+   Eg: If singleton instance is an object constructed with values from a database, we have to be working with
+       live database for testing. We can implement the same interface through which singleton is accessed by
+       it's dependents and inject our own dummy database for testing.
+   
+   
+   
+   
+   
+   
+   

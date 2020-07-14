@@ -1,0 +1,40 @@
+ * Authentication module in nodeJS. Can be authenticated using 'local' strategy or delegated to 'google', 'facebook' etc.
+ 
+***Username and password HAVE TO BE REGISTERED AND INSERTED IN DB FIRST TO AUTHENTICATE.***
+
+ * passport.authenticate('strategy', {options}) - middleware is used inside required endpoint.
+ 
+This authenticate() middleware triggers passport.use(strategy) which contains the authentication logic,
+which upon completion triggers passport.serialize(). Serialize will have access to user object from the db which was fetched 
+in passport.use(strategy).
+
+Eg: for authentication logic. Local strategy => Fetch user from DB and check if given values from client match.
+
+serialize() ensures which field of the user object the passport module has to keep track of. In below example it is user._id.
+sets req.session.passport.user = user.id. Triggers deserialize.
+
+deserialize() has access to the user.id set in serialize. Fetches user object from DB using that and attaches to the req object.
+req.user = user obj from DB.
+
+passport.authenticate() => passport.use() => passport.serialize() => passport.deserialize().
+Jumps done by passing done() as callback inside each function. (not next() ).
+
+* Serialize and Deserialize in passport 
+  
+  passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});              │
+                 │ 
+                 │
+                 └─────────────────┬──→ saved to session
+                                   │    req.session.passport.user = {id: '..'}
+                                   │
+                                   ↓           
+passport.deserializeUser(function(id, done) {
+                   ┌───────────────┘
+                   │
+                   ↓ 
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });            └──────────────→ user object attaches to the request as req.user   
+});

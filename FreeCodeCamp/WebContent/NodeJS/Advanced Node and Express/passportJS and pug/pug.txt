@@ -1,0 +1,42 @@
+
+
+ * Pug is a template engine for generating HTML files. Syntax based on whitespaces. Variables are used and
+   replaced with values from server before serving to client.
+      /views/pug/index.pug.
+      
+   Eg: Sample pug syntax
+   
+  doctype html
+  html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) bar(1 + 5)
+  body
+    h1 Pug - node template engine
+    #container.col
+      if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Pug is a terse and simple templating language with a
+        strong focus on performance and powerful features.
+      
+  *In your Pug file, you're able to use a variable by referencing the variable name as #{variable_name} inline with other text 
+   on an element or by using an equal sign on the element without a space such as p=variable_name 
+   which assigns the variable's value to the p element's text.
+   
+         if showLogin
+         	h1 Enter username-password 
+         else 
+         	h1 Hello-World . => showLogin is a variable. Fed when rendering pug file in res.render({showLogin: true});
+   
+   Eg: h1 Hello #{user} you are using pug. => inline example
+       h1=user => assigning variable to text of a tag.
+       
+ 
+
+
+
+

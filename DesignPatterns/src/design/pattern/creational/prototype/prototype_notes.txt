@@ -1,0 +1,24 @@
+WHY PROTOTYPE ? 
+Usually we won't be constructing all objects from scratch. We may make use of existing objects and build on them (or)
+customize them.
+
+* For this purpose, we may need a "deep copy" facility so that changes in the copy dont affect the original. 
+
+Prototype is all about copying an object.
+
+* When a class implements Cloneable it doesn't mention if it is for deep-copy or shallow-copy.
+
+* For complex objects with a large object graph, deep copying every single object is tedious and
+  sometimes objects may not be in your control.
+  
+  apache-commons serializable utils is a good tool to deep copy recursivly but all objects have to implement Serializable.
+  
+  This new "cloning-utils" which makes use of reflection, does deep copy recursively.
+  
+  Shallow Copy : Creating object and Copying references from eg: List1 to List2.
+  Deep Copy: Creating object and copying every value. No connection with copied object. Costly
+  
+  Lazy Copy: When an instance is shared, JVM keeps count and does a deep copy when many objects share that instance,
+             else shallow copy.
+             
+             Combines both Shallow copy + Deep Copy.

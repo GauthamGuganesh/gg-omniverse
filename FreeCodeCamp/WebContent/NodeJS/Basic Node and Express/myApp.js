@@ -29,6 +29,7 @@ app.get("/json", (req, res) => {
 
 });
 
+//Chaining middleware
 app.get("/now", (req, resp, next) => {
 
   req.time = new Date().toString();
