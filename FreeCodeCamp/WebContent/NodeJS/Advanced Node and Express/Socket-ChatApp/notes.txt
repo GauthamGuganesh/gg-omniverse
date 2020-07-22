@@ -1,0 +1,1 @@
+This socket-chat application is built over the authentication mechanism implemented using passport and pug.

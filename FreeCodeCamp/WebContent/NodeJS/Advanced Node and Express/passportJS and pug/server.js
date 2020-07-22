@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Creating session and using it in passport.
-app.use( session({ secret: process.env.SESSION_SECRET,
+app.use( session({ secret: process.env.SESSION_SECRET, // SESSION_SECRET is a random value that is used to hash your cookie.
                    resave: true,
                    saveUninitialized: true
                   }) );

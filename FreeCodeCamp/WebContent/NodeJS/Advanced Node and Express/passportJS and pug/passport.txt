@@ -38,3 +38,6 @@ passport.deserializeUser(function(id, done) {
         done(err, user);
     });            └──────────────→ user object attaches to the request as req.user   
 });
+
+serializeUser determines, which data of the user object should be stored in the session
+The result of the serializeUser method is attached to the session as req.session.passport.user = {}
