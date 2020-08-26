@@ -1,0 +1,16 @@
+Visitor :
+    A pattern where a component(visitor) is allowed to traverse the entire inheritance hierarchy. Implemented by 
+    propogating the vist() method throughout the hierarchy.
+    
+    *Propogate an accept method throughout the visitor hierarchy.
+    
+    *Create visitor(or various methods inside a single visitor) for each element in the hierarcy.  (for double, addition, multi etc).
+    
+    *Each accept calls visitor.visit(this).
+    
+    Useful for adding extra behaviours to entire hierarchy of classes. Decorator adds behaviour to a particular component alone.
+    
+ Intrusive Visitor: Jumping into every class in the hierarchy and modifying them. (bad way) violates single responsibility. (SRP)
+ SRP - printing function shouldn't be spread out ideadlly. should be in a single module.
+ 
+ Visitor - a bit of tight coupling between the hierarchy and the visitor implementation.

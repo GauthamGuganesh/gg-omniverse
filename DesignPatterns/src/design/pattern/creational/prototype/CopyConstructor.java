@@ -1,5 +1,8 @@
 package design.pattern.creational.prototype;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 class Address
 {
   public String streetAddress, city, country;
@@ -54,7 +57,7 @@ class Employee
   }
 }
 
-class CopyConstructorDemo
+class CopyConstructor
 {
   public static void main(String[] args)
   {
@@ -67,5 +70,12 @@ class CopyConstructorDemo
     chris.name = "Chris";
     System.out.println(john);
     System.out.println(chris);
+    
+    int[] a = new int[] {1, 2, 3, 5};
+    String arr = Arrays.stream(a).boxed().map(x -> x.toString()).reduce((x, y) -> x += y).get();
+    System.out.println(arr.getClass());
+    
+    
+    String s = "hello";
   }
 }

@@ -16,15 +16,17 @@ class Citizen
 //with base classes.
 class CitizenBuilder
 {
-	public CitizenBuilder()
+	protected Citizen citizen; //First, declare the object to be built.
+
+	
+	public CitizenBuilder(Citizen citizen)
 	{
-		
+		this.citizen = citizen;
 	}
 	
-	protected Citizen citizen = new Citizen(); //First, declare the object to be built.
-
 	public CitizenBuilder(String name)
 	{
+		this.citizen = new Citizen();
 		citizen.name = name;
 	}
 	
@@ -57,7 +59,7 @@ class CitizenBuilder
 class Addressbuilder extends CitizenBuilder //Only if extended, possible to jump between builders fluently
 {
 	public Addressbuilder(Citizen citizen) {
-		this.citizen = citizen;
+		super(citizen);
 	}
 
 	public Addressbuilder in(String streetName)
@@ -76,7 +78,7 @@ class Addressbuilder extends CitizenBuilder //Only if extended, possible to jump
 class WorkBuilder extends CitizenBuilder
 {
 	public WorkBuilder(Citizen citizen) {
-		this.citizen = citizen;
+		super(citizen);
 	}
 
 	public WorkBuilder at(String company)

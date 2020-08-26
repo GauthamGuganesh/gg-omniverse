@@ -1,0 +1,26 @@
+Template Method
+  Allows to define skeleton of algorithm in base class, implementations in derived class. 
+  Similar to strategy, but uses inheritance.
+  
+  *Define algorithm at high level
+  *Then define constituent parts as abstract methods.
+  
+Instead of having a refernce of the interface inside the TextProcessor like in strategy,
+we make TextProcessor abstract and have abstract methods. If you want HTMLOutput, extend TextProcessor as HTMLTextProcessor and 
+implement. The abstract method will be a template, like,
+
+abstract class TextProcessor
+{
+	public void process() //Template method that details the high level algorithm
+	{
+	 	start(); //Abstract methods
+	 	addItemToListAndRender();
+	 	end();
+	}
+	
+	public void abstract start();
+	public void abstract addItemToListAndRender();
+	public void end();
+}
+
+HTMLTextProcessor can extend this and implement.

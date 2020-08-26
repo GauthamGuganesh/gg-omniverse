@@ -1,0 +1,12 @@
+Observer -
+    A component that desires to be informed of events that occur in a system/object.
+    Eg: When an object does some actions, or some event occurs observer would like to be informed about that.
+    
+    Observable - the component generating the events. 
+    	Observable must provide an event or eventAPI to subscribe.
+    
+ Limitation : If eg: PropertyChangeEvent is fired and several properties are changing. If properties are not dependent on
+ each other, it's simple. But if properties are dependent on each other and change with respect to each other, Observer pattern
+ becomes quite complicated and we need to track the dependencies.
+ 
+ 

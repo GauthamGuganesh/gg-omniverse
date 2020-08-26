@@ -75,6 +75,7 @@ let buildchloropleth = () =>
                .style('transform', 'translate(' + x + "px" + "," + y + "px)") //Transform - translate(x,y) -> moves the element to specified coordinate (in px) 
                .attr('data-education', data.get(d.id))
                .text("County : " + counties[d.id])
+               .text("Education  : " + data.get(d.id) + "%")
                .style('opacity', 1)
                .style('font-size', '12px');
 
@@ -102,3 +103,19 @@ let buildchloropleth = () =>
 }
 
 buildchloropleth();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+NULL OBJECT
+		A no-operation object that satisfies a particular dependency but doesn't do anything.
+		Makes sense to make null object a singleton. 

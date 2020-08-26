@@ -1,0 +1,11 @@
+Strategy: System behaviour partially specified at runtime.
+
+    Enables the exact behaviour of a system to be selected. Either at runtime or compiletime.
+    
+    * Identify high level algorithm - common things.
+    * Then design interfaces. - the specific strategies
+    
+  Eg : TextProcessor. Any text processor has an output. Here if an output strategy is implemented,
+  depending on runtime choice of output(markdown or html), we can generate different output for same text input.
+  
+  Static approach ->  have Type argument(generics) as a strategy-implementor reference.

@@ -1,0 +1,9 @@
+COMMAND Design pattern:
+
+An object that represents an instruction to perform particular actions. Contains all information necessary for the action
+to be taken.
+
+In java, we cannot preserve a java statement. Eg: int a = 5; b = 4; We cannot undo this. The statement is lost.
+Using command object, we can store the set of operations, undo/redo.
+
+Encapsulate all details of an operation into a separate object. => Thus useful information can be serialized, stored in memory/disk.

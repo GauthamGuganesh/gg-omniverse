@@ -1,0 +1,12 @@
+DECORATOR:
+  Facilitates adding additional behaviour to individual objects without inheriting from them or altering them.
+  
+*Extending an object is also one way of implementing decorator.
+*Decorators have the same super type as the object they decorate. (Usually achieved by making the objects and decorator implement
+a common interface or abstract class).
+
+*You can use multiple decorators to wrap an object.
+*Since decorators have same type as object, we can pass around decorated object instead of original.
+
+Static decorator,
+Dynamic Decorator in example 

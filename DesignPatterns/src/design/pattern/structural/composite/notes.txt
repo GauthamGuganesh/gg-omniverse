@@ -1,0 +1,6 @@
+Composite:
+		A mechanism for treating scalar and compound objects uniformly.
+		
+
+Crux: Can make a scalar object masquerade as a compound object by returning a singleton element collection
+ containing only 'this'. Java provides Iterable interface to realise this.

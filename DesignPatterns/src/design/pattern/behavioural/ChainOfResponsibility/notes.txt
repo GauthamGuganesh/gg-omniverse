@@ -1,0 +1,21 @@
+Chain Of Responsibility
+	A chain of components in which each gets the chance to process a command or query,
+	or terminate the chain.
+	
+	*Can be implemented as a chain of references or as a central construct using Event Broker.
+	*Enlist objects in the chain possibly controlling their order.
+	
+The Client in need of a request to be handled sends it to the chain of handlers 
+which are classes that extend the Handler class.
+Eg: CreatureModifier is a handler interface.
+
+
+Command-Query Separation : An object can be interacted with in mostly two ways
+   * Command - Asking to set some value (setter) rather than directly doing.
+   * Query   - Requesting the value of something rather than directly giving.
+ 
+ Having separate means of sending commands and queries (CQS) - Other listeners can listen to the commands and queries
+ 															   and do some processing on them.
+ 
+BrokerChain -> Uses Mediator, Memento, Observer, Command patterns, Chain of responsiblity. Flexible.
+

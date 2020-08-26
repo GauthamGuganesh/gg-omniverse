@@ -1,0 +1,6 @@
+FACADE:
+  Provides a simple easy to understand user interface/API over a large sophisticated body of code.
+  
+   Makes an external communication layer over an existing system which is incompatible with the system.
+   Facade deals with interfaces, not implementation.
+   Its purpose is to hide internal complexity behind a single interface that appears simple on the outside.

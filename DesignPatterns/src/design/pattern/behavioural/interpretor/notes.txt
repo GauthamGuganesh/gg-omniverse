@@ -1,0 +1,6 @@
+Interpretor:
+  A component that processes structured textual data. Firts it turns it into tokens and then parses.
+  
+  Usually parsers and interpretors are not generated from scratch by hand. Some frameworks are used for parser development.
+  
+  ANTLR is a good framework for developing industry-grade parsers.

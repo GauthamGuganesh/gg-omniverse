@@ -1,0 +1,13 @@
+State :
+     A pattern in which the behaviour of an object depends on the state of the object. A state transitions from one state to
+     another.
+     
+     A state machine is a construct that manages state transitions.
+     
+     Every single state should be an object.TIP:  Use enum if you don't have any particular behaviour for states.
+     Every state machine has rules describing state transitions. Triggers triggering transitions.
+     
+     Map<State, List<Pair<Trigger, State>> - eg of a data structure used in state machine.
+     A list of possible transitions for each state and the trigger that transitions it.
+     
+  Can be done from scratch or using frameworks like statemachine library from Spring.

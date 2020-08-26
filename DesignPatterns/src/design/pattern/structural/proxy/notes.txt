@@ -1,0 +1,20 @@
+Proxy:
+  A class that acts as an interface to a particular resource. The resource may be remote, costly to build etc.
+  
+  Proxy has mostly same methods as the underlying object. - KEY Point.
+  
+Protection Proxy:
+If an application does not have access to some resource then 
+such proxies will talk to the objects in applications that have access to that resource and then get the result back.
+
+Remote proxy:
+	The object is remote. 
+
+PropertyProxy:
+
+DynamicProxy: Using invocation handler.
+
+Proxy Vs Decorator:
+
+Proxy - Identical interface
+Decorator - Enhanced interface

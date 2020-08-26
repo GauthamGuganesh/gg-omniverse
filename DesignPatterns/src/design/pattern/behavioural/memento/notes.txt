@@ -1,0 +1,12 @@
+A token/handle representing a snapshot of the system state. Allows us to roll back to that state.
+May or may not expose state information.
+
+Memento - should always be read-only. 
+
+Limitation : 
+ * Memory occupcation - This is where Command pattern is better. Because it just lists the changes (less smaller than states).
+ * Constructor cannot return a memento.
+ 
+ Memento for interop:
+ * Classes in C++ cannot be instantiated in Java. For this interop, we can expose the object in C++ memory using a memento 
+ to Java.

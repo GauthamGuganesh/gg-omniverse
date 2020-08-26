@@ -1,0 +1,11 @@
+ADAPTER:
+   A software construct that adapts an existing interface, say X, to conform to a particular interface Y.
+   
+   
+   The adapter pattern convert the interface of a class into another interface clients expect.
+   Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
+Example: 
+   You have access to an interface which returns a list of lines. But you need points in your own implementation,
+   LineToPointAdapter does the conversion (or) adapts the existing line interface to conform to points.
+   
+   Adapter caching done to prevent multiple conversions of a same object.

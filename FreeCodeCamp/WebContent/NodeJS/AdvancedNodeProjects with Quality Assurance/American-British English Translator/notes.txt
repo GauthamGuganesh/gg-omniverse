@@ -1,0 +1,1 @@
+Only client side scripting for this project also. No nodeJS server component.

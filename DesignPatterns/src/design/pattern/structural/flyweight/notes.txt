@@ -1,0 +1,11 @@
+FLYWEIGHT:
+   A space optimization technique that lets us use less memory by storing common data associated with objects externally 
+
+   In Flyweight pattern we use a HashMap that stores reference to the object which have already been created,
+   every object is associated with a key. Now when a client wants to create an object, 
+   he simply has to pass a key associated with it and 
+   if the object has already been created we simply get the reference to that object else it creates a new object and 
+   then returns it reference to the client.
+   
+   Intrinsic - properties common to all objects 
+   Extrinsic - properties specific to objects

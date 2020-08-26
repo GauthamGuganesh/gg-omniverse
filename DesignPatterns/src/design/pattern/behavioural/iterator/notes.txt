@@ -1,0 +1,9 @@
+ITERATOR:
+   A helper object that facilitates us to traverse a data structure.
+   
+ Java has Iterator<T> and Iterable<T>
+ 
+ Iterator<T> - We need to implement this interface if we are building our own iterator.
+ Only Downside - No recursion in iterator<T>.
+ 
+ Iterable<T> - Implementing this means, the implementing object can be put inside a for loop.

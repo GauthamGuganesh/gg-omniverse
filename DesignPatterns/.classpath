@@ -7,6 +7,12 @@
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/javassist-3.12.1.GA.jar"/>
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/guava-23.0.jar"/>
 	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/reflections-0.9.11.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/rxjava-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/spring-messaging-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Users/gauthamguganesh/Downloads/spring-statemachine-core-2.0.2.RELEASE.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

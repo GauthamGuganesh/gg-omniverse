@@ -1,0 +1,1 @@
+This project has only client-side scripting alone. Pure JS and chai. No Node.

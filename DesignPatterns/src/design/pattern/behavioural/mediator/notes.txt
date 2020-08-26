@@ -1,0 +1,9 @@
+Mediator:
+   Facilitates communication between components without them aware of each other or without having 
+   direct referential access to each other.
+   
+   Eg: Chat room - Who comes and leaves.
+ 
+ Mediator can also be implemented along with Observer pattern.
+ 
+ A mediator can be the Observable where Observers subscribe events.

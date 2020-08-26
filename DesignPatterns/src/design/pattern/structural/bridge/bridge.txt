@@ -1,0 +1,6 @@
+BRIDGE:  Decouples an interface(hierarcy) from an implementation(hierarchy).
+Allows you to separate the abstraction from the implementation
+
+   Prevents a cartesian product complexity explosion.
+ eg: https://www.geeksforgeeks.org/bridge-design-pattern/
+ 
