@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/multithreading/Multithreading.pages</name>
+			<type>1</type>
+			<location>/Users/gauthamguganesh/Documents/Multithreading.pages</location>
+		</link>
+	</linkedResources>
 </projectDescription>
