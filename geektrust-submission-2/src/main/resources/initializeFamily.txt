@@ -1,0 +1,22 @@
+Person,Spouse,Child,Gender
+King Shan,Queen Anga,Chit,Male
+King Shan,Queen Anga,Ish,Male
+King Shan,Queen Anga,Vich,Male
+King Shan,Queen Anga,Aras,Male
+King Shan,Queen Anga,Satya,Female
+Chit,Amba,Dritha,Female
+Chit,Amba,Tritha,Female
+Chit,Amba,Vritha,Male
+Vich,Lika,Vila,Female
+Vich,Lika,Chika,Female
+Aras,Chitra,Jnki,Female
+Aras,Chitra,Ahit,Male
+Satya,Vyan,Asva,Male
+Satya,Vyan,Vyas,Male
+Satya,Vyan,Atya,Female
+Dritha,Jaya,Yodhan,Male
+Jnki,Arit,Laki,Male
+Jnki,Arit,Lavnya,Female
+Asva,Satvy,Vasa,Male
+Vyas,Krpi,Kriya,Male
+Vyas,Krpi,Krithi,Female

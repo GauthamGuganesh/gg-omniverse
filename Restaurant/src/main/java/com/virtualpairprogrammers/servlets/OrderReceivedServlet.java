@@ -49,7 +49,10 @@ public class OrderReceivedServlet extends HttpServlet {
 		session.setAttribute("orderId", order.getId());
 		
 		String redirectUrl = "/thankYou.html";
-		redirectUrl = response.encodeURL(redirectUrl);
+		redirectUrl = response.encodeURL(redirectUrl); 
+		//If cookies not in browser, session attributes cannot be retrieved. In that case
+		//we have to encode sessionID in URL. That's what response.encodeURL does.
+		
 		response.sendRedirect(redirectUrl);
 
 	}
