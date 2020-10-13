@@ -3,17 +3,21 @@ package code.geektrust.galaxy.planet.rulingfamily;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import code.geektrust.galaxy.planet.rulingfamily.utils.FamilyTreeInitializer;
-import code.geektrust.galaxy.planet.rulingfamily.utils.GenderConstants;
 import code.geektrust.galaxy.planet.rulingfamily.utils.RelationShipFetcher;
 import code.geektrust.galaxy.planet.rulingfamily.utils.RelationshipFetcherFactory;
 import code.geektrust.galaxy.planet.rulingfamily.utils.Result;
 
-public class Family 
+//If has only private constructor, the class should be declared "final".
+//Since, if having private constructor means, there is no scope for inheritance. (derived classes need 'super()' access.
+//Hence by declaring final we ensure classes with private constructors alone are not subclassed.
+
+public final class Family 
 {
-	private List<Person> familyMembers = new ArrayList<>();
-	private static Family family;
+	private final List<Person> familyMembers = new ArrayList<>();
+	private static Family family = new Family();
 	
 	private Family()
 	{
@@ -29,32 +33,33 @@ public class Family
 		}
 	}
 	
-	public static Family createFamily()
+	public static Family retrieve()
 	{
-		if(family == null)
-			family = new Family();
-		
 		return family;
 	}
 	
 	public String addChildrenToFamily(String parentName, String childName, String childGender)
 	{
-		Person parent = findFamilyMember(parentName);
+		Optional<String> result = Optional.ofNullable(findFamilyMember(parentName))
+										   .flatMap(value -> {
+												return value.isMale() ? Optional.of(Result.CHILD_ADDITION_FAILED) :
+																		Optional.of("");
+											});
 		
-		if(parent == null) return Result.PERSON_NOT_FOUND;
-		else if(parent.getGender().equals(GenderConstants.MALE)) return Result.CHILD_ADDITION_FAILED;
-		else
-		{
-			Person child = parent.createChildren(childName, childGender);
-			if(child != null) 
-			{
-				familyMembers.add(child);
-				return Result.CHILD_ADDITION_SUCCEEDED;
-			}
-			else return Result.CHILD_ADDITION_FAILED;
-		}
-			
+		return result.isEmpty() ? Result.PERSON_NOT_FOUND 
+								: result.get().isBlank() ? createAndAddChild(parentName, childName, childGender)
+														 : result.get();
+		
 	}
+
+	private String createAndAddChild(String parentName, String childName, String childGender) 
+	{
+		Optional<Person> child = Optional.ofNullable(findFamilyMember(parentName).createChildren(childName, childGender));
+		child.ifPresent(value -> family.addFamilyMember(value));
+		
+		return child.isEmpty() ? Result.CHILD_ADDITION_FAILED : Result.CHILD_ADDITION_SUCCEEDED;
+	}
+	
 	
 	public String getRelationship(String name, String relationship)
 	{

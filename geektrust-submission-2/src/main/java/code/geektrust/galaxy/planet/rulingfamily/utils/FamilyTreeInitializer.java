@@ -12,10 +12,10 @@ import code.geektrust.galaxy.planet.rulingfamily.Person;
 
 public class FamilyTreeInitializer 
 {
-	private final String FILE_SEPARATOR = System.getProperty("file.separator");
-	private final String PROJECT_PATH = "src/main/resources";
+	private final static String FILE_SEPARATOR = System.getProperty("file.separator");
+	private final static String PROJECT_PATH = "src/main/resources";
 
-	private Family family;
+	private final Family family;
 	
 	public FamilyTreeInitializer(Family family)
 	{
@@ -31,14 +31,13 @@ public class FamilyTreeInitializer
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(familyFile))))
 		{
 			String input = br.readLine();
-			Scanner inputScanner = new Scanner(input);
 			
 			while(input != null)
 			{
 				input = br.readLine();
 				if(input == null) break;
 				
-				inputScanner = new Scanner(input);
+				Scanner inputScanner = new Scanner(input);
 				inputScanner.useDelimiter(",");
 				
 				while(inputScanner.hasNext())
@@ -72,18 +71,8 @@ public class FamilyTreeInitializer
 			}
 			
 			Person mother = spouse.getGender().equals(GenderConstants.MALE) ? person : spouse;
-			Person child  = null;
-			switch(childGender)
-			{
-				case GenderConstants.MALE:
-					child = mother.createChildren(childName, childGender);
-					family.addFamilyMember(child);
-					break;
-				case GenderConstants.FEMALE:
-					child = mother.createChildren(childName, childGender);
-					family.addFamilyMember(child);
-					break;
-			}
+			Person child  = mother.createChildren(childName, childGender);
+			family.addFamilyMember(child);
 		}
 	}
 }

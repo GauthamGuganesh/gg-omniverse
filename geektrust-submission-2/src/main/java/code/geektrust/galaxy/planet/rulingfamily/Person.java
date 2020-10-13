@@ -3,6 +3,9 @@ package code.geektrust.galaxy.planet.rulingfamily;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+
+import code.geektrust.galaxy.planet.rulingfamily.utils.GenderConstants;
 
 public class Person 
 {
@@ -11,7 +14,8 @@ public class Person
 	private Person father;
 	private Person mother;
 	private Person spouse;
-	private List<Person> children = new ArrayList<Person>();
+	private boolean isMale;
+	private final List<Person> children = new ArrayList<Person>();
 	
 	public Person(String personName, String gender)
 	{
@@ -24,6 +28,7 @@ public class Person
 		this.mother = mother;
 		this.personName = personName;
 		this.gender = gender;
+		this.isMale = gender.equals(GenderConstants.MALE) ? true : false;
 	}
 	
 	public void marry(Person spouse)
@@ -46,6 +51,11 @@ public class Person
 	public String getPersonName()
 	{
 		return personName;
+	}
+	
+	public boolean isMale()
+	{
+		return isMale;
 	}
 	
 	public String getGender()
@@ -114,9 +124,10 @@ public class Person
 	
 	@Override
 	public String toString() {
-		String fatherName = (father != null) ? father.getPersonName() : null;
-		String motherName = (mother != null) ? mother.getPersonName() : null;
-		String spouseName = (spouse != null) ? spouse.getPersonName() : null;
+		String fatherName = Optional.ofNullable(father).isPresent() ? father.getPersonName() : "";
+		String motherName = Optional.ofNullable(mother).isPresent() ? mother.getPersonName() : "";
+		String spouseName = Optional.ofNullable(spouse).isPresent() ? spouse.getPersonName() : "";
+		
 		return getClass().getSimpleName() + " = [Name = " + personName + ", Father = " + fatherName + ", Mother = " + motherName + ", Spouse = " + spouseName + ", Gender = " + gender + "]"; 
 	}
 }

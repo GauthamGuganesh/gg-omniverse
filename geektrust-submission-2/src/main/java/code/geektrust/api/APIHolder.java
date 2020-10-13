@@ -2,17 +2,22 @@ package code.geektrust.api;
 
 import code.geektrust.galaxy.planet.rulingfamily.Family;
 
-public class APIHolder 
+//Util classes should be public and final
+//Have a private constructor
+//No non-static methods, members.
+
+public final class APIHolder 
 {
+	private APIHolder() { }
 	public static final String ADD_CHILD_COMMAND = "ADD_CHILD";
 	public static final String GET_RELATIONSHIP_COMMAND = "GET_RELATIONSHIP";
 	
-	public static ApplicationAPI<Family> getFamilyApplicationAPI(String[] input) throws InvalidCommandException, IllegalArgumentException
+	public static ApplicationAPI<Family> getFamilyApplicationAPI(String ...input) throws InvalidCommandException, IllegalArgumentException
 	{
 		String[] sanitizedInput = new InputSanitizer(input).sanitizeInput();
-		Family family = Family.createFamily();
+		Family family = Family.retrieve();
 		
-		ApplicationAPI<Family> familyApplicationAPI = () -> {
+		return () -> {
 			
 			String executionCommand = sanitizedInput[0];
 			switch(executionCommand)
@@ -32,8 +37,6 @@ public class APIHolder
 					return "Invalid Command";
 			}			
 		};
-		
-		return familyApplicationAPI;		
 	}
 }
 

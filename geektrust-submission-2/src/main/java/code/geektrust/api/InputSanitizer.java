@@ -2,11 +2,11 @@ package code.geektrust.api;
 
 public class InputSanitizer 
 {
-	private String[] input;
+	private final String[] input;
 	
-	public InputSanitizer(String[] args)
+	public InputSanitizer(String ...input)
 	{
-		this.input = args;
+		this.input = input;
 	}
 	
 	public String[] sanitizeInput() throws InvalidCommandException, IllegalArgumentException
@@ -28,7 +28,7 @@ public class InputSanitizer
 		 					+ "Correct usage " + APIHolder.ADD_CHILD_COMMAND + " \"Mother's Name\" \"Child's Name\" \"Gender\" ");
 		 		
 		 		String gender = input[3];
-		 		if(!gender.equalsIgnoreCase("Male") && !gender.equalsIgnoreCase("Female"))
+		 		if(!("Male").equalsIgnoreCase(gender) && !("Female").equalsIgnoreCase(gender))
 		 			throw new IllegalArgumentException("Invalid Gender. "
 		 					+ "Correct usage " + APIHolder.ADD_CHILD_COMMAND + " \"Mother's Name\" \"Child's Name\" \"Gender(Male or Female)\"");
 		 		

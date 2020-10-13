@@ -11,6 +11,39 @@ import code.geektrust.galaxy.planet.rulingfamily.Person;
 
 public class RelationshipFetcherFactory 
 {
+	private RelationshipFetcherFactory() {}
+	
+	private static BiFunction<List<Person>, String, List<String>> genderFilter = (list, gender) -> {
+		
+		List<String> filteredList = new ArrayList<String>();
+		
+		for(Person listItem : list)
+			if(listItem.getGender().equals(gender))
+				filteredList.add(listItem.getPersonName());
+		
+		return filteredList;
+	};
+	
+	private static BiFunction<Person, String, List<String>> getParentalRelations = (parent, relationGender) -> {
+		
+		return genderFilter.apply(parent.getSiblings(), relationGender);
+	};
+	
+	private static BiFunction<Person, String, List<String>> getInLaws = (person, inLawGender) -> {
+		
+		List<String> inLaws = new ArrayList<String>();
+		
+		if(person.getSpouse() != null)
+			inLaws.addAll(genderFilter.apply(person.getSpouse().getSiblings(), inLawGender));
+		
+		inLaws.addAll(genderFilter.apply(person.getSiblings().stream()
+																.map(x -> x.getSpouse())
+																.filter(x -> x != null)
+																.collect(Collectors.toList()), inLawGender));
+		
+		return inLaws;
+	};
+	
 	public static RelationShipFetcher getRelationShip(Person person, String relationship)
 	{		
 		switch(relationship)
@@ -66,36 +99,5 @@ public class RelationshipFetcherFactory
 				};
 		}
 	}
-	
-    static BiFunction<List<Person>, String, List<String>> genderFilter = (list, gender) -> {
-		
-		List<String> filteredList = new ArrayList<String>();
-		
-		for(Person listItem : list)
-			if(listItem.getGender().equals(gender))
-				filteredList.add(listItem.getPersonName());
-		
-		return filteredList;
-	};
-	
-	static BiFunction<Person, String, List<String>> getParentalRelations = (parent, relationGender) -> {
-		
-		return genderFilter.apply(parent.getSiblings(), relationGender);
-	};
-	
-	static BiFunction<Person, String, List<String>> getInLaws = (person, inLawGender) -> {
-		
-		List<String> inLaws = new ArrayList<String>();
-		
-		if(person.getSpouse() != null)
-			inLaws.addAll(genderFilter.apply(person.getSpouse().getSiblings(), inLawGender));
-		
-		inLaws.addAll(genderFilter.apply(person.getSiblings().stream()
-																.map(x -> x.getSpouse())
-																.filter(x -> x != null)
-																.collect(Collectors.toList()), inLawGender));
-		
-		return inLaws;
-	};
 }
 
