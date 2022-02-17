@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;result&apos; in &apos;com.virtualpairprogrammers.domain.Order.hashCode()&apos; to &apos;res&apos;&#x0A;- Original project: &apos;restaurant&apos;&#x0A;- Original element: &apos;com.virtualpairprogrammers.domain.Order.hashCode().result&apos;&#x0A;- Renamed element: &apos;result&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;result&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;com.virtualpairprogrammers.domain{Order.java[Order~hashCode@result!1487!1501!1491!1496!I!0!false" name="res" references="true" stamp="1602551292570" version="1.0"/>
+</session>
