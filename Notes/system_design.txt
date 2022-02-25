@@ -1,0 +1,15 @@
+System design Primer Course:
+- Client-server architecture - 2-Tier, 3-Tier, n-Tier architecture
+- Proxy - forward, reverse
+- Data, Data-flow — Data stores, Data flow methods, Data generation
+			       Factors influencing type of data store/flow - Volume, Consumption/Retrieval
+
+			   — Database Types - Relational, Non Relational - Vertical and horizontal scaling
+							 - NonRelational - KV stores, Document based DBs
+						            Column DBs, Search DBs
+
+- Applications/Services 
+- APIs - Communication, Abstraction, Platform agnostic - Public, Private, Web, SDK/Library APIs -
+API contracts, security - RPC, SOAP, REST
+- Cache — Cache hit, miss - Cache Invalidation, cache warming - Cache eviction FIFO, LRU, LFU
+	     — Cache aside, Read through, Write through, Write around, Write back patterns
