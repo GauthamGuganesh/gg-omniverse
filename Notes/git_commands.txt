@@ -1,8 +1,5 @@
 GIT COMMANDS:
 
-Repo username : Gautham
-Repo password : orht6kc4ndsbhlhdx6dpgyth4mrkpmqdyf2rfht57bf2g3hpdeua
-
 —Cloning:
 	cd <path>
 	git clone <url>
