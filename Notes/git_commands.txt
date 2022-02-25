@@ -1,0 +1,23 @@
+GIT COMMANDS:
+
+Repo username : Gautham
+Repo password : orht6kc4ndsbhlhdx6dpgyth4mrkpmqdyf2rfht57bf2g3hpdeua
+
+—Cloning:
+	cd <path>
+	git clone <url>
+
+Whenever push, pull or commit, be inside <path>
+
+—Updating:
+	git pull origin <branch name> 
+
+Default branch - master
+
+—Commiting:
+	git commit -a -m “<Comment>”
+	git push origin <branch name>
+
+— Adding files:
+git add <filepath> - for adding a new file in the local repo.
+After adding do commit.
