@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+spec:
+  rules:
+    - host: document-ocr.com
+      http:
+        paths:
+          - path: /detect
+            pathType: Prefix
+            backend:
+              service:
+                  name: text-detection-service
+                  port:
+                    number: 80
+                    
+          - path: /score
+            pathType: Prefix
+            backend:
+              service:
+                  name: template-recognition-service
+                  port:
+                    number: 81

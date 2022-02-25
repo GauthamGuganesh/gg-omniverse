@@ -1,0 +1,39 @@
+{
+    "EAD": [
+        {
+            "word": "America",
+            "meanx": 328.2,
+            "meany": 28.6,
+            "sdx": 0.45,
+            "sdy": 0.55
+        },
+        {
+            "word": "Sex",
+            "meanx": 474.4,
+            "meany": 370.8,
+            "sdx": 0.55,
+            "sdy": 1.3
+        },
+        {
+            "word": "Valid",
+            "meanx": 313.8,
+            "meany": 423.2,
+            "sdx": 1.3,
+            "sdy": 0.84
+        },
+        {
+            "word": "Authorization",
+            "meanx": 292.0,
+            "meany": 59.0,
+            "sdx": 0.71,
+            "sdy": 1.41
+        },
+        {
+            "word": "Expires",
+            "meanx": 374.4,
+            "meany": 450.6,
+            "sdx": 1.82,
+            "sdy": 1.14
+        }
+    ]
+}

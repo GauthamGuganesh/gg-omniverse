@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: text-detection-deployment
+  labels:
+    app: text-detection
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: text-detection
+  template:
+    metadata:
+      labels:
+        app: text-detection
+    spec:
+      hostname: text-detection
+      containers:
+      - name: text-detection
+        image: gauthamguganesh/document-ocr:text-detection
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: my-secret
+      nodeSelector:
+        name: node_1
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: template-recognition-deployment
+  labels:
+    app: template-recognition
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: template-recognition
+  template:
+    metadata:
+      labels:
+        app: template-recognition
+    spec:
+      hostname: template-recognition
+      containers:
+      - name: template-recognition
+        image: gauthamguganesh/document-ocr:template-recognition
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 81
+      imagePullSecrets:
+        - name: my-secret
+      nodeSelector:
+        name: node_2

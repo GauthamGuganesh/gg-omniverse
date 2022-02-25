@@ -1,0 +1,65 @@
+[
+    {
+        "word": "United",
+        "positions": [
+            69,
+            31
+        ]
+    },
+    {
+        "word": "America",
+        "positions": [
+            328,
+            29
+        ]
+    },
+    {
+        "word": "Authorization",
+        "positions": [
+            291,
+            58
+        ]
+    },
+    {
+        "word": "Category",
+        "positions": [
+            495,
+            215
+        ]
+    },
+    {
+        "word": "Expires",
+        "positions": [
+            374,
+            449
+        ]
+    },
+    {
+        "word": "Given",
+        "positions": [
+            314,
+            163
+        ]
+    },
+    {
+        "word": "Country",
+        "positions": [
+            327,
+            269
+        ]
+    },
+    {
+        "word": "Terms",
+        "positions": [
+            320,
+            319
+        ]
+    },
+    {
+        "word": "USCIS",
+        "positions": [
+            318,
+            218
+        ]
+    }
+]
