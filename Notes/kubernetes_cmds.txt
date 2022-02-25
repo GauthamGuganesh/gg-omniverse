@@ -1,0 +1,10 @@
+Kubernetes image pull secret:
+
+kubectl create secret docker-registry my-secret --docker-server=https://index.docker.io/v2/ --docker-username=gauthamguganesh --docker-password=10Apr1992$ --docker-email=gautham.guganesh@gmail.com
+
+
+Starting minikube with VM-Hyperkit and not on docker driver as container:
+minikube start —-vm=true —-driver=hyperkit —-nodes 2
+
+
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
